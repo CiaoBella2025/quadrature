@@ -70,8 +70,35 @@ def Int2(x_min, x_max, a, b, c):
     I = (((a*x_max**3)/3) + ((b*x_max**2)/2) +c*x_max) - (((a*x_min**3)/3) + ((b*x_min**2)/2) +c*x_min)
     return I
 
+#------------------------------------------
+#   Made Up Function
+#------------------------------------------
+def func3(x, a):
+    y = (x**3) + a
+    return y
+
+#------------------------------------------
+#   Integral for Made Up function
+#------------------------------------------
+def Int3(x, a):
+    I = (x**4)/4 + a*x 
+    return I
+
+#------------------------------------------
+#   Square root Function 
+#------------------------------------------
+def func4(x):
+    y = (1/(x**(1/2)*8)) 
+    return y
 
 
+
+#------------------------------------------
+#   Square root Integral
+#------------------------------------------
+def Int4(x):
+    I = (x**(1/2))/4
+    return I
 
 #=================
 # MAIN PROGRAM
@@ -79,9 +106,9 @@ def Int2(x_min, x_max, a, b, c):
 
 # Base Function
 
-Nout = 2000
-x_min = -10
-x_max = 10
+Nout = 5000
+x_min = -5
+x_max = 5
 step = (x_max-x_min)/Nout
 
 y = []
@@ -89,37 +116,36 @@ x = []
 y_0 = []
 y_1 = []
 
-a = 1
-b = 1
-c = 1
+a = []
+b = []
+c = []
+
 for i in range(0, Nout):
     x.append(x_min + i * step)
-    y.append(func1(x[i], a, b, c))
+    y.append(func5(x[i], a, b, c))
 
 
 # Quadrature: 
 
 integral = 0
 
-#for i in range(1, Nout):                           #Riemann Sums
-    #integral = integral + y[i] * step
+for i in range(1, Nout):                           #Riemann Sums
+    integral = integral + y[i] * step
 
 
 #for i in range (1, Nout):                           #Trapezoid Rule
     #integral = integral + ((y[i-1] + y[i])/2) * step
 
-for i in range (0, Nout):                           #Simpson's Rule
-    for s in range (2, Nout, 2):
-        x_even = y[s] * 2
-    for t in range (1, Nout, 2):
-        x_odd = y[t] * 4
-    
-    integral = integral + step * (y[0] + y[i] + x_odd + x_even)/3
+
+#for i in range (2, Nout):                           #Simpson's Rule
+
+    #integral = integral + ((step/6) * (y[i-2] + 4 * y[i-1] + y[i])) 
+    #integral = integral + step * (y[0] + y[i] + x_odd + x_even)/3
    #integral = integral + (step/3)((i[0] + i[Nout])(4(x_odds) + 2(x_even)))
     
 
-print('Analytic Integral = ', Int1(x_min, x_max, a,b,c))
-print("Simpson's Rule = ", integral)
+print('Analytic Integral = ', Int5(x[i], a, b, c))
+print("Rules = ", integral)
 
 
 # Generate Plot

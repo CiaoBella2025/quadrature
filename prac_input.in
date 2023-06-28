@@ -1,0 +1,27 @@
+23.0e6           # e-beam: Ee
+6.5e-4           # e-beam: relative energy spread
+41.0e-6          # e-beam: sigma_e_x [m]
+81.0e-6          # e-beam: sigma_e_y [m]
+0.65e-6          # e-beam: eps_x [m rad]
+0.60e-6          # e-beam: eps_y [m rad]
+523e-9           # p-beam: wavelength [m]
+50               # p-beam: sig (normalized) [unitless]
+13.59e2          # p-beam: sigma_p [m]
+0.01             # p-beam: a0
+1                # p-beam: envelope =1: gaussian; =2: rect.; =3: from file
+1                # p-beam: laser chirping type modType; =9: from file
+0.01             # p-beam: if modType=2: a0chirp; =3: lambda_RF; =5: p
+0.0              # p-beam: angle between the laser and the z-axis [rad]
+0                # aperture: TypeAp = 0: circular, 1: rectangular
+1.0              # aperture: distance between IP and aperture L_aper [m]
+0.022            # aperture: if TypeAp = 0: R_aper [m]; = 1: x_aper [m]
+0.00             # aperture: if TypeAp = 0: ignored; = 1: y_aper [m]
+0.01             # aperture: start spectrum
+2.3              # aperture: end spectrum
+100           # simulation: Nout (number of output point in the spectrum)
+6700           # simulation: Ntot 
+1000          # simulation: Npart 
+400            # simulation: N_MC
+0                # simulation: =1: read ICs from file; <> 1: MC
+1                #
+1                #
